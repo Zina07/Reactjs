@@ -1,0 +1,14 @@
+.material-icons {
+            font-size: 100;
+            color: black;
+            float: left;
+           
+}
+
+.box:nth-child(2nd) {
+    color: #CCC  ;
+}
+
+.box:nth-child(odd) {
+    color: #AAA ;
+}
