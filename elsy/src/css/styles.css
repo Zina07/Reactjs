@@ -1,7 +1,9 @@
-.material-icons {
+.box{
             font-size: 100;
             color: black;
-            float: left;
+            height: 190px;
+            padding: 10;
+            align-items: center;
            
 }
 
@@ -12,3 +14,4 @@
 .box:nth-child(odd) {
     color: #AAA ;
 }
+

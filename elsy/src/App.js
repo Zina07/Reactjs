@@ -13,13 +13,26 @@ const MAX_HEART = 180;
 const MIN_STEPS = 0;
 const MAX_STEPS = 50000;
 
+
+
 class App extends React.Component {
+  constructor() {
+    super();
+    
+  }
+  
+  state = {
+  water: 0,
+  heart : 120,
+  temperature: -10,
+  steps: 3000,
+  }
   render() {
     return (
 
       <div className='App'>
 
-        <Person />  <HeartRate />
+        <Person steps={this.state.steps}/>  <HeartRate heart={this.state.heart} /> 
         <Icon />
 
       </div>

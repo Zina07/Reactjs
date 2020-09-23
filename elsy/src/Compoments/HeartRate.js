@@ -10,6 +10,8 @@ class HeartRate extends Component {
 
 
                 <Icon name='favorite' />
+                <p>{this.props.heart}</p>
+                <p>{this.props.step}</p>
             </div>
         );
     }
