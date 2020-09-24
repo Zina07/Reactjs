@@ -1,15 +1,17 @@
-import React, { Component } from 'react';
-import '../src/App.js';
+import React from 'react';
 
 
-class App extends Reac.Component {
-  constructor() {
-    super()
-  state= {
-    Count: 1,
+class App extends React.Component {
+  incrementCount () {this.setstate({
+    count: this.state.count +1})};
+
+
+    state = {
+      count: 1
+
+    }
   
-  }
-}
+
   render() {
     return (
       <div className="App">
@@ -17,12 +19,12 @@ class App extends Reac.Component {
         <h1>Counter</h1>
         <h2>{this.state.count}</h2>
         <div>
-                <Button onClick={this.increment.Count}>+</Button>
-            </div>
+          <button onClick={this.incrementCount}>+</button>
+        </div>
 
       </div>
     );
   }
+}
 
-
-  export default App;
+export default App;

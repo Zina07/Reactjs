@@ -1,17 +1,17 @@
 .box{
-            font-size: 100;
-            color: black;
+           
             height: 190px;
-            padding: 10;
-            align-items: center;
+            padding: 10px;
+            text-align: center;
            
 }
 
-.box:nth-child(2nd) {
-    color: #CCC  ;
+.box:nth-child(even) {
+    background-color: #CCC  ;
+
 }
 
 .box:nth-child(odd) {
-    color: #AAA ;
+    background-color: #AAA ;
 }
 
