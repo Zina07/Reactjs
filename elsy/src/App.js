@@ -32,7 +32,8 @@ class App extends React.Component {
 
       <div className='App'>
 
-        <Person steps={this.state.steps}/>  <HeartRate heart={this.state.heart} /> 
+        <Person steps={this.state.steps}/>  
+        <HeartRate heart={this.state.heart} /> 
         <Icon />
 
       </div>
