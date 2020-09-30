@@ -1,30 +1,49 @@
 import React from 'react';
+import Counter from '../src/Components/Counter';
 
 
 class App extends React.Component {
-  incrementCount () {this.setstate({
-    count: this.state.count +1})};
 
+  constructor() {
+    super();
+    this.incrementCount = this.incrementCount.bind(this);
+    this.decrementCount = this.decrementCount.bind(this);
 
-    state = {
-      count: 1
-
-    }
-  
-
-  render() {
-    return (
-      <div className="App">
-
-        <h1>Counter</h1>
-        <h2>{this.state.count}</h2>
-        <div>
-          <button onClick={this.incrementCount}>+</button>
-        </div>
-
-      </div>
-    );
   }
-}
 
-export default App;
+  state = {
+    counter: 1
+
+  }
+  incrementCount() {
+    this.setState({
+      counter: this.state.counter + 1
+    });
+  }
+
+    decrementCount(){
+      this.setState({
+        counter: this.state.counter - 1
+      });
+    }
+
+
+
+      render() {
+        return (
+          <div>
+
+            <h1>Counter</h1>
+            <h2>{this.state.counter}</h2>
+            
+              <button onClick={this.incrementCount}>+</button>
+              <button onClick={this.decrementCount}>-</button>
+            <Counter incrementFn={this.incrementCount} decrementFn = {this.decrementCount} counter={this.state.counter}></Counter>
+            
+
+          </div>
+        );
+      }
+    };
+
+    export default App;

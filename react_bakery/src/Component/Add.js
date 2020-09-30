@@ -1,11 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component}  from 'react';
 
 class Add extends Component {
     render() {
         return (
-            <div className="Add">
-                
-            </div>
+            (<div>Add</div>)
         );
     }
 }
