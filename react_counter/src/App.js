@@ -34,10 +34,9 @@ class App extends React.Component {
           <div>
 
             <h1>Counter</h1>
-            <h2>{this.state.counter}</h2>
+           
             
-              <button onClick={this.incrementCount}>+</button>
-              <button onClick={this.decrementCount}>-</button>
+            
             <Counter incrementFn={this.incrementCount} decrementFn = {this.decrementCount} counter={this.state.counter}></Counter>
             
 

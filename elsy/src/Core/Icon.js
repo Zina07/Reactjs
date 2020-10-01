@@ -5,13 +5,14 @@ class Icon extends React.Component {
     render() {
         return (
 
-            <div className=''>
-                <span class="material-icons" style={{ fontSize: 100 }}>{this.props.name}</span>
-            </div>
+                <span class="material-icons" style={{fontSize: 100, color: this.props.color}}> 
+                {this.props.name}
 
+                </span>
+                
         );
     }
-}a 
+} 
 
 
 export default Icon;
