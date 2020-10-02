@@ -5,6 +5,7 @@ import Pay from './Component/Pay';
 import List from './Component/List';
 import Add from './Component/Add';
 import Button from './Component/Core/Button';
+import RCSlider from 'rc-slider';;
 
 
 
@@ -14,15 +15,18 @@ class App extends Component {
     this.onClickTabAdd = this.onClickTabAdd.bind(this);
     this.onClickTabList = this.onClickTabList.bind(this);
     this.onClickTabPay = this.onClickTabPay.bind(this);
+
     this.state = {
       activeTab: 'add',
-      items: []
-    this.state ={
-      input: ''
-      price:1
-
-      }
+      items: [],
     }
+
+    this.state = {
+      input: '',
+      price: 1
+
+    }
+
   }
   onClickTabAdd() {
     console.log('tab add click')
@@ -43,7 +47,7 @@ class App extends Component {
     })
   }
   renderContent() {
-    switch(this.state.activeTab) {
+    switch (this.state.activeTab) {
       case 'add':
         return <Add></Add>;
       case 'list':
@@ -53,7 +57,7 @@ class App extends Component {
       default:
         return (<h1>Error</h1>)
     }
-    
+
   }
   render() {
     return (
@@ -70,6 +74,7 @@ class App extends Component {
 
         {this.renderContent()}
         {/* {this.state.activeTab === 'add' ? <Add></Add>: (this.state.activeTab === 'list' ? <List></List> : <Pay></Pay>)} */}
+        <RCSlider></RCSlider>
       </div>
     );
   }
