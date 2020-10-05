@@ -1,24 +1,52 @@
-import React, { Component } from 'react';
+import React from 'react';
+import RCSlider from 'rc-slider';
+import 'rc-slider/assets/index.css';
+import '../CSS/App.css'
 
-class Add extends Component {
+
+class Add extends React.Component {
     constructor() {
         super()
+        this.updateItemName = this.updateItemName.bind(this)
+        this.updatePrice = this.updatePrice.bind(this)
+        this.submitForm = this.submitForm.bind(this)
         this.state = {
-            itemName: '',
-            price: 1,
+            itemName:" ",
+            price: 1
         }
-        //partie3
-
     }
+    updateItemName(evt) {
+       this.setState({
+           itemName: evt.target.value
+        })
+    }
+    updatePrice(val) {
+        this.setState({
+            price:val
+        })
+    }
+    submitForm() {
+        this.props.addItemFn(this.state.itemName,this.state.price)
+    }
+    
+
     render() {
         return (
-            <div>Add
-            <input type="text"
-            className={this.props.onChange}></input>
-            <input type range></input> 
+            <div>
+                <title> Add </title>
+                <input type="text" onChange={this.updateItemName()} >
+                </input>
+                <RCSlider min = {1}
+                          max = {10}
+                          onChange={this.updatePrice()}>
+                </RCSlider>
+                <button class="btn btn-primary"
+                        type="submit" 
+                        value="Add"
+                        onClick={this.submitForm()}>   
+                </button>
             </div>
-        );
+        )
     }
 }
-
 export default Add;

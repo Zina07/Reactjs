@@ -7,3 +7,19 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+
+
+import React, { Component } from 'react';
+import Enfant from './components/Enfant';
+class Parent extends Component {
+​
+    render () {
+        return (
+            <div>
+                <Enfant> button</Enfant>
+            </div>
+        )
+    }
+}
+​

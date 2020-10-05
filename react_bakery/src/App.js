@@ -5,7 +5,8 @@ import Pay from './Component/Pay';
 import List from './Component/List';
 import Add from './Component/Add';
 import Button from './Component/Core/Button';
-import RCSlider from 'rc-slider';;
+import RCSlider from 'rc-slider';
+
 
 
 
@@ -26,8 +27,20 @@ class App extends Component {
       price: 1
 
     }
+    addItem(itemName, price) {
+      console.log('methode addItems', itemName, price);
 
-  }
+      let newItems= this.state.items
+      newItems Push({
+        itemName: itemName,
+        price: price
+      })
+    }
+    
+this.setState({
+    items: newItems
+})
+  
   onClickTabAdd() {
     console.log('tab add click')
     this.setState({
@@ -71,14 +84,19 @@ class App extends Component {
         <Button isSelected={this.state.activeTab === 'pay'} onClick={this.onClickTabPay}>
           Pay
         </Button>
-
-        {this.renderContent()}
-        {/* {this.state.activeTab === 'add' ? <Add></Add>: (this.state.activeTab === 'list' ? <List></List> : <Pay></Pay>)} */}
+        {this.state.activeTab === 'add' && <Add addItemFn={this.addItem}> </Add>
+        {this.state.activeTab === 'list' && <List addItemFn={this.addItem}> </List>
+        {this.state.activeTab === 'pay' && <Pay addItemFn={this.addItem}></Pay>
+      
         <RCSlider></RCSlider>
-      </div>
-    );
-  }
-}
+        </div>
+        );
+      }
+    }
+       // {this.renderContent()}
+       // {/* {this.state.activeTab === 'add' ? <Add></Add>: (this.state.activeTab === 'list' ? <List></List> : <Pay></Pay>)} */}
+       
+     
 
 
 
