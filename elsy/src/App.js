@@ -76,9 +76,9 @@ class App extends React.Component {
           liters += pas * 0.0002
         }
         return Math.round(liters * 100) / 100
-});
+};
 
-}
+
 
   render() {
     return (
