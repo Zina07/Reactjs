@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import './App.css';
 
 import {
   BrowserRouter as Router,
@@ -16,8 +15,12 @@ import MyList from './Components/MyList';
 import Popular from './Components/Popular';
 import PopularBattle from './Components/PopularBattle';
 
+
+
+
 class App extends Component {
   render() {
+    
     return (
       <Router>
         <div>
