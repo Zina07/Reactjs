@@ -1,5 +1,5 @@
 import React from 'react';
-import Discover from '../Discover';
+
 
 class Card extends React.Component {
     constructor() {
