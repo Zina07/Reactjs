@@ -14,7 +14,7 @@ class Popular extends React.Component {
     }
   }
   //dès que l'on click sur le lien via la console affiche results: tous les films
-  componentDidMount() {
+  componentDidMount(){ 
     fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3d6d40297f88d21a199502e723af067d')
       .then(res => res.json())
       .then(json => {
@@ -24,11 +24,12 @@ class Popular extends React.Component {
         const movies = json.results.map((elem) => {
           // console.log('my elem');
           return {
-            title: elem.title
-                    description: elem.description
+                    title: elem.title,
+                    description: elem.description,
                     imgUrl: elem.poster_path ? 'https://image.tmdb.org/t/p/w300${elem.poster_path}'
           }
-        })
+        });
+      }
         this.setState({ movies })
       })
   }

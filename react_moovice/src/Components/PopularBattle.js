@@ -6,19 +6,22 @@ class PopularBattle extends React.Component {
 
   constructor() {
     super()
-
-    this.state = {
+    this.ChooseFilm= this.ChooseFilm.bind(this)
+  }
+    state = {
       movies: [],
       currentPage: 1,
-    
+
+    this.setState({
       
-    }
+    })
     return {
-      title: elem.title
-              description: elem.description
+              id: elem.id,
+              title: elem.title,
+              description: elem.description,
               imgUrl: elem.poster_path ? 'https://image.tmdb.org/t/p/w300${elem.poster_path}'
     }
-  })
+  });
       this setState({movies})
   }
   componentDidMount() {
@@ -32,36 +35,59 @@ class PopularBattle extends React.Component {
       })
   }
 
+  ChooseFilm(id) {
+    console.log('choseFilm id', id)
+
+      let myList = JSON.parse(localStorage.getItem('my-list'), []
+
+    if  (!myList.includes(id)) {
+          myList.push(id)
+          localStorage.setItem ('myList', JSON.stringify,(myList))
+    
+    }
+
+    this.setState({
+      currentPage: this.state.currentPage + 1
+    });
+    
+  }
 
   render() {
     
       const {
         movies: [],
         currentPage: 1,
-   
+      }= this.state
 
-      const firstMovie = this.state.movies[0]
-      const secondtMovie = this.state.movies[1]
+      const secondIndex = currentPage * 2 - 1
+      const firstIndex = secondIndex - 1
+
+      const firstMovie = movies[firstIndex]
+      //console.console.log('firsMovie', firstMovie);
+      
+      const secondtMovie = movies[secondIndex]
+     // console.console.log('secondMovie', secondMovie);
 
     
     
-    } this.state
+    
     return (
       <div className="row">Popular Battle
       <div className="col-6">
+        <button OnClick={() =>this.ChooseFilm(firstMovie.id)} >
             <Card {...firstMovie}/>
+        </button >
       </div>
+      
       <div className="col-6">
-            <Card {...secondtMovie}/>
+        <button OnClick={() =>this.ChooseFilm(secondnMovie.id)}>
+            <Card {...secondtMovie} />
+        </button>  
       </div>
-          //<Card OnClick data={this.state.movies[0]}
-         // {this.state.movies[this.state.currentPage]}>
-                  
-          </Card>
-         
+         </Card>
        
-
-      </div>
+  </div>
+     
 
     );
   }

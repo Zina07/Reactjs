@@ -54,9 +54,9 @@ class App extends Component {
               <MyList />
             </Route>
           </Switch>
-          
+          </div>
          </Router > 
-        </div>
+        
         </div>
        
     );
