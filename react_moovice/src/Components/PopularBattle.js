@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './movie/Card'
+import Img_DVD from '../Public/Img_DVD'
 
 class PopularBattle extends React.Component {
 
@@ -12,7 +13,13 @@ class PopularBattle extends React.Component {
     
       
     }
-
+    return {
+      title: elem.title
+              description: elem.description
+              imgUrl: elem.poster_path ? 'https://image.tmdb.org/t/p/w300${elem.poster_path}'
+    }
+  })
+      this setState({movies})
   }
   componentDidMount() {
     fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3d6d40297f88d21a199502e723af067d')
@@ -28,13 +35,27 @@ class PopularBattle extends React.Component {
 
   render() {
     
-   //console.log(this.state.movies[0])
-   // console.log(this.state.movies[1])
+      const {
+        movies: [],
+        currentPage: 1,
+   
 
+      const firstMovie = this.state.movies[0]
+      const secondtMovie = this.state.movies[1]
+
+    
+    
+    } this.state
     return (
-      <div>Popular Battle
-
-          <Card data={this.state.movies[0]}>
+      <div className="row">Popular Battle
+      <div className="col-6">
+            <Card {...firstMovie}/>
+      </div>
+      <div className="col-6">
+            <Card {...secondtMovie}/>
+      </div>
+          //<Card OnClick data={this.state.movies[0]}
+         // {this.state.movies[this.state.currentPage]}>
                   
           </Card>
          
