@@ -12,17 +12,18 @@ class PopularBattle extends React.Component {
       movies: [],
       currentPage: 1,
 
-    this.setState({
-      
-    })
+      /*this.setState({
+    }*/
+   
     return {
               id: elem.id,
               title: elem.title,
               description: elem.description,
-              imgUrl: elem.poster_path ? 'https://image.tmdb.org/t/p/w300${elem.poster_path}'
+              imgUrl: elem.poster_path ? `https://image.tmdb.org/t/p/w300${elem.poster_path}`
     }
   });
-      this setState({movies})
+      this.setState({movies})
+    }
   }
   componentDidMount() {
     fetch('https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3d6d40297f88d21a199502e723af067d')
@@ -38,7 +39,7 @@ class PopularBattle extends React.Component {
   ChooseFilm(id) {
     console.log('choseFilm id', id)
 
-      let myList = JSON.parse(localStorage.getItem('my-list'), []
+      let myList = JSON.parse(localStorage.getItem('my-list')), []
 
     if  (!myList.includes(id)) {
           myList.push(id)

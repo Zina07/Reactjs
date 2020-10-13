@@ -38,20 +38,15 @@ class App extends Component {
             </ul>
           </nav>
           <Switch>
-            <Route exact path="/">
-              <Discover/>
+            <Route exact path="/"> <Discover/>
             </Route>
-            <Route path="/battle/">
-              <DiscoverBattle />
+            <Route path="/battle/"> <DiscoverBattle />
             </Route>
-            <Route path="/popular/">
-              <Popular />
+            <Route path="/popular/"><Popular />
             </Route>
-            <Route path="/popular-battle/">
-              <PopularBattle />
+            <Route path="/popular-battle/"><PopularBattle />
             </Route>
-            <Route path="/my-list/">
-              <MyList />
+            <Route path="/my-list/"> <MyList />
             </Route>
           </Switch>
           </div>
